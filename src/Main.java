@@ -3,6 +3,7 @@ public class Main {
         task1();
         task2();
         task3();
+        task4();
     }
 
     /**К нам снова обратились за помощью, но теперь уже для того, чтобы написать алгоритм,
@@ -87,5 +88,20 @@ public class Main {
         }
         System.out.println("Данные строки — " + result);
     }
-
+    /**Дана строка из букв английского алфавита "aabccddefgghiijjkk".
+    Нужно найти и напечатать буквы, которые дублируются в строке.
+    Обратите внимание, что строка отсортирована, т.е. дубли идут друг за другом.
+    В итоге в консоль должен быть выведен результат программы: "acdgijk".
+    */
+    public static void task4() {
+        System.out.println("Задача 4");
+        String letters = "aabccddefgghiijjkk";
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < letters.length()-1; i++) {
+            if (letters.charAt(i) == letters.charAt(i+1)) {
+                result.append(letters.charAt(i));
+            }
+        }
+        System.out.println(result);
+    }
 }
