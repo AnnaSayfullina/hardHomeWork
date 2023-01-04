@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         task1();
         task2();
-//        task3();
+        task3();
     }
 
     /**К нам снова обратились за помощью, но теперь уже для того, чтобы написать алгоритм,
@@ -65,4 +65,27 @@ public class Main {
         String result = new String(full);
         System.out.println("Верное написание Ф. И. О. сотрудника с заглавных букв — " + result);
     }
+    /**Имеется две строки.
+     Первая: "135"
+     Вторая: "246"
+     Соберите из двух строк одну, содержащую данные "123456".
+     Использовать сортировку нельзя.
+     Набор чисел задан для понимания позиций, которые они должны занять в итоговой строке.
+     Выведите результат в консоль в формате: “Данные строки — ….”
+
+     - **Подсказка**
+     Следует использовать StringBuilder.
+     */
+    public static void task3(){
+        System.out.println("Задача 3");
+        String first = "135";
+        String second = "246";
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < first.length(); i++){
+            result.append(first.charAt(i));
+            result.append(second.charAt(i));
+        }
+        System.out.println("Данные строки — " + result);
+    }
+
 }
