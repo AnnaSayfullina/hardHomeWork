@@ -1,9 +1,12 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         task1();
         task2();
         task3();
         task4();
+        task5();
     }
 
     /**К нам снова обратились за помощью, но теперь уже для того, чтобы написать алгоритм,
@@ -104,4 +107,28 @@ public class Main {
         }
         System.out.println(result);
     }
+    /**
+     * Напишите метод, который получает на вход массив и переставляет все его элементы в обратном порядке.
+     * Подобное задание вы решали в домашнем задании по массивам.
+     * В метод приходит массив, допустим:
+     * {3, 2, 1, 6, 5}.
+     * Нужно без вспомогательного массива переместить элементы так, чтобы поданный массив стал: {5, 6, 1, 2, 3}.
+     * Рекомендуем написать этот метод без возвращаемого значения. Вы будете приятно удивлены, что даже если мы не вернем массив, первоначальный массив изменится, когда мы будем модернизировать пришедший в виде параметра массив внутри метода.
+     * Причину такого поведения ссылочных типов (объектов) вы узнаете на следующем уроке или на QA-вебинаре.
+     */
+    public static void sortArray (int[] array) {
+        for(int i = 0; i < array.length/2; i++) {
+            int number = array[i];
+            int newIndexOfNumber = (array.length-1) - i;
+            int newNumber = array[newIndexOfNumber];
+            array[newIndexOfNumber] = number;
+            array[i] = newNumber;
+        }
+        System.out.println(Arrays.toString(array));
+    }
+    public static void task5(){
+        int[] numbers = {3, 2, 1, 6, 5};
+        sortArray(numbers);
+    }
+
 }
