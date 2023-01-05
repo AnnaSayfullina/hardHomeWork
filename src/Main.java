@@ -7,6 +7,7 @@ public class Main {
         task3();
         task4();
         task5();
+        task6();
     }
 
     /**К нам снова обратились за помощью, но теперь уже для того, чтобы написать алгоритм,
@@ -127,8 +128,42 @@ public class Main {
         System.out.println(Arrays.toString(array));
     }
     public static void task5(){
+        System.out.println("Задача 5");
         int[] numbers = {3, 2, 1, 6, 5};
         sortArray(numbers);
     }
+    /**
+     * Вернемся к задаче о валидаторе текста из урока по строкам.
+     * - Условие задачи из урока 1.7
+     *     Дана строка из букв английского алфавита "aabccddefgghiijjkk".
+     *     Нужно найти и напечатать буквы, которые дублируются в строке.
+     *     Обратите внимание, что строка отсортирована, т.е. дубли идут друг за другом.
+     *     В итоге в консоль должен быть выведен результат программы: "acdgijk".
 
+     Напишите метод, который в виде параметра принимает отсортированную строку.
+     * Например, aabccddefgghiijjkk.
+     * С помощью цикла проверьте, что в строке нет дублей, и выведите в консоль сообщение об этом.
+     * Если дубль найден, нужно прервать поиск по остальным символам и вывести сообщение о присутствии дубля,
+     * причем с указанием, какой именно символ задублирован. Затем сразу же прервать выполнение метода.
+     * Сам метод ничего возвращать не должен (void).
+     */
+    public static void checkDoubles(String letters) {
+        int sum = 0;
+        for (int i = 0; i < letters.length() - 1; i++) {
+            if (letters.charAt(i) != letters.charAt(i + 1)) {
+                sum++;
+            } else {
+                System.out.println("В строке есть дубль - " + letters.charAt(i));
+                return;
+            }
+        }
+        if (sum == letters.length()) {
+            System.out.println("В строке нет дублей");
+        }
+    }
+    public static void task6() {
+        System.out.println("Задача 6");
+        String word = "aabccddefgghiijjkk";
+        checkDoubles(word);
+    }
 }
